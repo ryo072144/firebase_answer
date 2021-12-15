@@ -37,6 +37,7 @@ class _FireStoreExerciseState extends State<FireStoreExercise> {
         future: FirebaseFirestore.instance.collection('users').doc(widget.userId).get(),
         builder: (context, snapshot) {
           if(snapshot.hasData&&snapshot.data!.exists){
+            //問３
             Map<String, dynamic> data = snapshot.data!.data() as Map<String, dynamic>;
             name = data['name'];
             age = data['age'];
