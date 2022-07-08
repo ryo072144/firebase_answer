@@ -9,7 +9,10 @@ void main() async{
 
   //問１: Firebaseの機能を利用する場合は、このコード忘れずに追加しましょう。
   WidgetsFlutterBinding.ensureInitialized();
-  await Firebase.initializeApp();
+  await Firebase.initializeApp(
+    options: DefaultFirebaseOptions.currentPlatform, 
+  );
+  //await Firebase.initializeApp();  FlutterFire CLiを使用しなかった場合
   runApp(const MyApp());
 }
 
